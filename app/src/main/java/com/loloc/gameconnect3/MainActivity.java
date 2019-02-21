@@ -5,6 +5,7 @@ import android.media.Image;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -92,17 +93,23 @@ public class MainActivity extends AppCompatActivity {
 
                         showEnd("YELLOW WON!");
 
-                    } for (int i = 0; i < 9; i++) {
+                    }
+                    }  else {
 
-                        if (gameState[i] != 2){
+                    boolean gameIsOver = true;
 
-                            showEnd("TRY AGAIN!");
+                    for(int counterState : gameState) {
 
-                        }
+                        if(counterState == 2) gameIsOver = false;
 
                     }
 
+                    if(gameIsOver){
+
+                        showEnd("Try Again!");
+
                     }
+            }
 
                 }
 
