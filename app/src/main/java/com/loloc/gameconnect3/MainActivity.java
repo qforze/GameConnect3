@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
     int activePlayer;
 
+    boolean gameIsActive = true;
+
     // 2 means unplayed
 
    int[] gameState = {2, 2, 2, 2, 2, 2, 2, 2, 2};
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         int tappedPawn = Integer.parseInt(pawn.getTag().toString());
 
-        if (gameState[tappedPawn] == 2) {
+        if (gameState[tappedPawn] == 2 && gameIsActive) {
 
             gameState[tappedPawn] = activePlayer;
 
@@ -77,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
                 if ((gameState[winningPosition[0]] == gameState[winningPosition[1]]) &&
                         (gameState[winningPosition[1]] == gameState[winningPosition[2]]) &&
                         (gameState[winningPosition[0]] != 2)) {
+
+                    gameIsActive = false;
 
                     int winner = (int) Array.get(winningPosition, 0);
 
@@ -132,6 +136,8 @@ public class MainActivity extends AppCompatActivity {
             ((ImageView) pawns.getChildAt(i)).setImageResource(0);
 
         }
+
+        gameIsActive = true;
 
     }
 
