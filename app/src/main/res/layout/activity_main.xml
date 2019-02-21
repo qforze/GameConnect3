@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Game"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="370dp"
+        android:layout_height="370dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/board"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </android.support.constraint.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="370dp"
+        android:layout_height="370dp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintLeft_toLeftOf="@+id/constraintLayout"
+        app:layout_constraintRight_toRightOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout">
+
+        <ImageView
+            android:id="@+id/pawn1"
+            android:layout_width="122dp"
+            android:layout_height="122dp"
+            android:onClick="appear"
+            android:padding="15dp"
+            android:tag="0"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="71dp" />
+
+        <ImageView
+            android:id="@+id/pawn2"
+            android:layout_width="122dp"
+            android:layout_height="122dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/pawn1"
+            android:onClick="appear"
+            android:padding="15dp"
+            android:tag="1"
+            tools:layout_editor_absoluteX="131dp"
+            tools:layout_editor_absoluteY="71dp" />
+
+        <ImageView
+            android:id="@+id/pawn3"
+            android:layout_width="123dp"
+            android:layout_height="122dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="appear"
+            android:padding="15dp"
+            android:tag="2"
+            tools:layout_editor_absoluteX="254dp"
+            tools:layout_editor_absoluteY="71dp" />
+
+        <ImageView
+            android:id="@+id/pawn4"
+            android:layout_width="122dp"
+            android:layout_height="122dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="1dp"
+            android:layout_toStartOf="@+id/pawn2"
+            android:onClick="appear"
+            android:padding="15dp"
+            android:tag="3"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="196dp" />
+
+        <ImageView
+            android:id="@+id/pawn5"
+            android:layout_width="122dp"
+            android:layout_height="122dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="122dp"
+            android:onClick="appear"
+            android:padding="15dp"
+            android:tag="4"
+            tools:layout_editor_absoluteX="131dp"
+            tools:layout_editor_absoluteY="194dp" />
+
+        <ImageView
+            android:id="@+id/pawn6"
+            android:layout_width="123dp"
+            android:layout_height="122dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:onClick="appear"
+            android:padding="15dp"
+            android:tag="5"
+            tools:layout_editor_absoluteX="254dp"
+            tools:layout_editor_absoluteY="194dp" />
+
+        <ImageView
+            android:id="@+id/pawn7"
+            android:layout_width="122dp"
+            android:layout_height="122dp"
+            android:layout_below="@+id/pawn4"
+            android:layout_marginTop="0dp"
+            android:onClick="appear"
+            android:padding="15dp"
+            android:tag="6"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="318dp" />
+
+        <ImageView
+            android:id="@+id/pawn8"
+            android:layout_width="122dp"
+            android:layout_height="122dp"
+            android:layout_below="@+id/pawn4"
+            android:layout_alignStart="@+id/pawn5"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="1dp"
+            android:onClick="appear"
+            android:padding="15dp"
+            android:tag="7"
+            tools:layout_editor_absoluteX="136dp"
+            tools:layout_editor_absoluteY="318dp" />
+
+        <ImageView
+            android:id="@+id/pawn9"
+            android:layout_width="122dp"
+            android:layout_height="122dp"
+            android:layout_below="@+id/pawn4"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/pawn2"
+            android:onClick="appear"
+            android:padding="15dp"
+            android:tag="8"
+            tools:layout_editor_absoluteX="258dp"
+            tools:layout_editor_absoluteY="318dp" />
+    </RelativeLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/overlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/winnerMessage"
+            android:layout_width="164dp"
+            android:layout_height="164dp"
+            android:background="@color/colorPrimary"
+            android:padding="25dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.498" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="playAgain"
+            android:text="Play Again"
+            app:layout_constraintBottom_toBottomOf="@+id/winnerMessage"
+            app:layout_constraintEnd_toEndOf="@+id/winnerMessage"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/winnerMessage"
+            app:layout_constraintTop_toTopOf="@+id/winnerMessage"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
+
